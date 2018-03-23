@@ -10,7 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180309065252) do
+ActiveRecord::Schema.define(version: 20180316104259) do
+
+  create_table "favorites", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "museum_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["museum_id"], name: "index_favorites_on_museum_id"
+    t.index ["user_id"], name: "index_favorites_on_user_id"
+  end
+
+  create_table "museums", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "museum_name"
+    t.string "museum_detail"
+    t.text "image_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false

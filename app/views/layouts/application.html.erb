@@ -12,14 +12,14 @@
   	<header>
   		<nav>
   			<% if user_signed_in? %>
-                <strong><%= link_to current_user.username, user_path(current_user.id) %></strong>
-                <%= link_to '登録情報変更', edit_user_registration_path %>
-                <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
-                <%= link_to 'top', root_path %>
+                <strong>Welcom<%= link_to current_user.username, user_path(current_user.id) %></strong>
+                <%= link_to 'Modification of Registration content', edit_user_registration_path %>
+                <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+                <%= link_to 'Top', root_path %>
             <% else %>
-                <%= link_to 'サインアップ', new_user_registration_path %>
-                <%= link_to 'ログイン', new_user_session_path %>
-                <%= link_to 'top', root_path %>
+                <%= link_to 'Sign Up', new_user_registration_path %>
+                <%= link_to 'Login', new_user_session_path %>
+                <%= link_to 'Top', root_path %>
                 <% end %>
   		</nav>
   	</header>
@@ -29,4 +29,9 @@
     <%= yield %>
 
   </body>
+  <footer style="margin: 0 auto;">
+    <%= link_to 'Terms of Service', termsofservice_path %>
+    <%= link_to 'Sitepolicy', sitepolicy_path %>
+    <p>© 2018 BAM Inc.</p>
+  </footer>
 </html>

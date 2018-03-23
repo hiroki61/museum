@@ -1,2 +1,9 @@
-<h1>Museum of beautiful appearance</h1>
-<p>Welcom</p>
+<h1>The Beautiful Appearance of Museum</h1>
+
+<% @museums.each do |museum| %>
+  <%= attachment_image_tag museum, :image, :fill, 500, 350 %>
+  <%= link_to museum_path(museum.id) do %>
+  	<%= museum.museum_name %>
+  <% end %>
+
+<% end %>

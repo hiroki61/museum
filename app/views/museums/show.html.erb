@@ -1,2 +1,9 @@
-<h1>Museums#show</h1>
-<p>Find me in app/views/museums/show.html.erb</p>
+<h3><%= @museum.museum_name %></h3>
+<%= attachment_image_tag @museum, :image, :fill, 500, 350 %>
+<br>
+<p><%= @museum.museum_detail %></p>
+<br>
+
+<%= link_to "Favorite", add_museum_path(@museum), method: :post %>
+<%= link_to "Edit", edit_museum_path(@museum) %>
+<%= link_to "Delete", museum_path(@museum), method: :delete %>

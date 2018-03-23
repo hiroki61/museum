@@ -1,2 +1,27 @@
-<h1>こんにちは、<%= current_user.username %>さん</h1>
-<p>My Page</p>
+<h1>Hello,<%= current_user.username %></h1>
+
+
+<h3>Favorite</h3>
+    <table>
+      <thead>
+          <tr>
+          	<th>Picture</th>
+            <th>MuseumName</th>
+            <th>Delete</th>
+          </tr>
+      </thead>
+      <tbody>
+        <% @user.museums.each_with_index do |museum, i| %>
+          <tr>
+          	<td><%= attachment_image_tag museum, :image, :fill, 75, 75 %></td>
+            <td>
+            <%= link_to museum_path(museum.id) do %>
+  			<%= museum.museum_name %>
+  			<% end %>
+  			</td>
+  			<td><%= link_to "Delete",favorite_path(@favorites[i][:id]), method: :delete %></td>
+
+          </tr>
+        <% end %>
+      </tbody>
+    </table>

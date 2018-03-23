@@ -1,0 +1,12 @@
+<h1>Edit</h1>
+<%= form_for(@museum) do |f| %>
+	<%= attachment_image_tag @museum, :image, :fill, 500, 350 %>
+	<%= f.attachment_field :image %>
+
+    <h4>MuseumName</h4>
+    <%= f.text_field :museum_name %>
+    <h4></h4>
+    <%= f.text_field :museum_detail %>
+    <br>
+    <%= f.submit 'Save' %>
+<% end %>

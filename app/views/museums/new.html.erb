@@ -1,0 +1,18 @@
+<%= form_for(@museum) do |f| %>
+  <% if @museum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @museum.errors.count %>件のエラーが発生しました。</h2>
+      <ul>
+      <% @museum.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+      <%= f.attachment_field :image %>
+  <br>
+    <%= f.text_field :museum_name, placeholder:"name" %>
+    <br>
+    <%= f.text_area :museum_detail, placeholder:"detail" %>
+  <%= f.submit "Save" %>
+<% end %>
