@@ -10,17 +10,55 @@
 
   <body>
   	<header>
-  		<nav>
-  			<% if user_signed_in? %>
-                <strong>Welcom<%= link_to current_user.username, user_path(current_user.id) %></strong>
-                <%= link_to 'Modification of Registration content', edit_user_registration_path %>
-                <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
-                <%= link_to 'Top', root_path %>
-            <% else %>
-                <%= link_to 'Sign Up', new_user_registration_path %>
-                <%= link_to 'Login', new_user_session_path %>
-                <%= link_to 'Top', root_path %>
-                <% end %>
+      <header class="navbar navbar-fixed-top navbar-inverse" style="margin-bottom: 0px;">
+      <div class="container" style="width: 1300px;">
+
+
+        <% if user_signed_in? %>
+
+          <nav class="nav navbar-nav navbar-left">
+            <ul class="nav navbar-nav navbar-left">
+              <li class="" style="padding-top: 12px;">
+                <span class="font"><%= link_to "TOP", root_path, style: "color:white;" %></span>
+              </li>
+            </ul>
+          </nav>
+
+          <nav class="nav navbar-nav navbar-right">
+            <ul class="nav navbar-nav navbar-right" style=" width: 125%;">
+              <li class="" style="padding-top: 12px;">
+                <span class="font"><%= link_to current_user.username, user_path(current_user.id), style: "color:white;" %>&emsp;</span>
+              </li>
+              <li class="" style="padding-top: 12px;">
+                <span class="font"><%= link_to 'Modification of Registration content', edit_user_registration_path , style: "color:white;" %>&emsp;</span>
+              </li>
+              <li class="" style="padding-top: 12px;">
+                <span class="font"><%= link_to 'Logout', destroy_user_session_path, method: :delete , style: "color:white;" %>&emsp;</span>
+              </li>
+            </ul>
+          </nav>
+
+        <% else %>
+
+          <nav class="nav navbar-nav navbar-left">
+            <ul class="nav navbar-nav navbar-left">
+              <li class="" style="padding-top: 12px;">
+                <span class="font"><%= link_to "TOP", root_path, style: "color:white;" %></span>
+              </li>
+            </ul>
+          </nav>
+
+          <nav class="nav navbar-nav navbar-right">
+            <ul class="nav navbar-nav navbar-right" style="width: 125%;">
+              <li class="" style="padding-top: 12px;">
+                <span class="font"><%= link_to 'Sign Up', new_user_registration_path, style: "color:white;" %>&emsp;</span>
+              </li>
+              <li class="" style="padding-top: 12px;">
+                <span class="font"><%= link_to 'Login', new_user_session_path, style: "color:white;" %>&emsp;</span>
+              </li>
+            </ul>
+          </nav>
+        <% end %>
   		</nav>
   	</header>
   	<p class="notice"><%= notice %></p>
@@ -29,9 +67,29 @@
     <%= yield %>
 
   </body>
-  <footer style="margin: 0 auto;">
-    <%= link_to 'Terms of Service', termsofservice_path %>
-    <%= link_to 'Sitepolicy', sitepolicy_path %>
-    <p>© 2018 BAM Inc.</p>
+
+  <hr>
+
+  <footer class="navbar navbar-fixed-bottom navbar-inverse" style="margin-bottom: 0px;">
+      <div class="container" style="width: 1300px;">
+        <nav class="nav navbar-nav navbar-right">
+          <ul class="nav navbar-nav navbar-right" style=" width: 125%;">
+            <li class="" style="padding-top: 12px;">
+              <p class="head_word">© 2018 BAM Inc.&emsp;</p>
+            </li>
+          </ul>
+        </nav>
+
+        <nav class="nav navbar-nav navbar-left">
+          <ul class="nav navbar-nav navbar-left" style=" width: 125%;">
+            <li class="" style="padding-top: 12px;">
+              <span class="font"><%= link_to 'Terms of Service', termsofservice_path , style: "color:white;" %>&emsp;</span>
+              </li>
+            <li class="" style="padding-top: 12px;">
+              <span class="font"><%= link_to 'Sitepolicy', sitepolicy_path , style: "color:white;" %>&emsp;</span>
+            </li>
+          </ul>
+        </nav>
+      </div>
   </footer>
 </html>
