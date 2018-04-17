@@ -26,5 +26,5 @@
       </tbody>
     </table>
     <% if current_user.admin_flg? %>
-    <%= link_to "create", new_museum_path(@museum), method: :get %>
+    <h3><%= link_to "create date", new_museum_path(@museum), method: :get %></h3>
     <% end %>

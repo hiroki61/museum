@@ -7,6 +7,7 @@
 <% if current_user.admin_flg? %>
                 <%= link_to "Edit", edit_museum_path(@museum) %>
 				<%= link_to "Delete", museum_path(@museum), method: :delete %>
+				<%= link_to "Favorite", add_museum_path(@museum), method: :post %>
             <% elsif current_user %>
                 <%= link_to "Favorite", add_museum_path(@museum), method: :post %>
             <% else %>

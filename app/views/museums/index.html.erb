@@ -1,9 +1,18 @@
 <h1>The Beautiful Appearance of Museum</h1>
 
+<div class="row_body">
+<div class="row">
 <% @museums.each do |museum| %>
-  <%= attachment_image_tag museum, :image, :fill, 500, 350 %>
+<div class="center-block">
+    <div class="col-lg-11" style="padding-top: 20px;">
+      
+  <%= attachment_image_tag museum, :image, :fill, 600, 450 %>
   <%= link_to museum_path(museum.id) do %>
   	<%= museum.museum_name %>
   <% end %>
+</div>
+</div>
+</div>
+</div>
 
 <% end %>
