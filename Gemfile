@@ -65,3 +65,5 @@ gem 'rails_admin'
 gem 'safe_yaml'
 gem 'bootstrap-sass'
 gem 'jquery-rails'
+
+gem 'seed-fu'

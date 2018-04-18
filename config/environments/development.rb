@@ -54,4 +54,9 @@ Rails.application.configure do
 
   # mailer setting
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  require 'safe_yaml'
+
+# Do this before loading any YAML
+SafeYAML::OPTIONS[:default_mode] = :safe
 end
